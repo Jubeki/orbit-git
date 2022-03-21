@@ -14,5 +14,9 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Added
 
-- Added Package Structure for initial release
-- Added Typing Animation
+- Added Git Integration from Orbit `v0.9.1`
+- Added `OrbitGit::resolvedMessageUsing` methods
+
+### Fixed
+
+- Fixed using Author Name and Author Email
