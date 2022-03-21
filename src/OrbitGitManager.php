@@ -77,7 +77,7 @@ class OrbitGitManager
 
     public function getName(): string
     {
-        if ($this->resolveName) {
+        if (isset($this->resolveName)) {
             return value($this->resolveName);
         }
 
@@ -86,7 +86,7 @@ class OrbitGitManager
 
     public function getEmail(): string
     {
-        if ($this->resolveEmail) {
+        if (isset($this->resolveEmail)) {
             return value($this->resolveEmail);
         }
 
@@ -95,23 +95,23 @@ class OrbitGitManager
 
     public function getMessage($event): string
     {
-        if($event instanceof OrbitalCreated && $this->resolveCreatedMessage) {
+        if($event instanceof OrbitalCreated && isset($this->resolveCreatedMessage)) {
             return value($this->resolveCreatedMessage, $event);
         }
 
-        if($event instanceof OrbitalDeleted && $this->resolveDeletedMessage) {
+        if($event instanceof OrbitalDeleted && isset($this->resolveDeletedMessage)) {
             return value($this->resolveDeletedMessage, $event);
         }
 
-        if($event instanceof OrbitalForceDeleted && $this->resolveForceDeletedMessage) {
+        if($event instanceof OrbitalForceDeleted && isset($this->resolveForceDeletedMessage)) {
             return value($this->resolveForceDeletedMessage, $event);
         }
 
-        if($event instanceof OrbitalUpdated && $this->resolveUpdatedMessage) {
+        if($event instanceof OrbitalUpdated && isset($this->resolveUpdatedMessage)) {
             return value($this->resolveUpdatedMessage, $event);
         }
 
-        if($this->resolveMessage) {
+        if(isset($this->resolveMessage)) {
             return value($this->resolveMessage, $event);
         }
 
