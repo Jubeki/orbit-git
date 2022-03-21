@@ -16,11 +16,11 @@ class ProcessGitTransaction
             return;
         }
 
-        $git->add(config('orbit.paths.content'), [
+        $git->add(config('orbit.paths.content'));
+
+        $git->commit(OrbitGit::getMessage($event), [
             '--author' => "'".OrbitGit::getName().' <'.OrbitGit::getEmail().">'",
         ]);
-
-        $git->commit(OrbitGit::getMessage($event));
 
         $git->push();
     }
