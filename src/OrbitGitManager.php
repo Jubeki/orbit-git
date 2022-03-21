@@ -121,22 +121,22 @@ class OrbitGitManager
                 ->replace('{primary_key}', $event->model->getKey());
     }
 
-    protected function getTypeOfEvent($event)
+    public function getTypeOfEvent($event)
     {
         if($event instanceof OrbitalCreated) {
-            return 'created';
+            return 'Created';
         }
 
         if($event instanceof OrbitalDeleted) {
-            return 'deleted';
+            return 'Deleted';
         }
 
         if($event instanceof OrbitalForceDeleted) {
-            return 'force-deleted';
+            return 'Force-Deleted';
         }
 
         if($event instanceof OrbitalUpdated) {
-            return 'updated';
+            return 'Updated';
         }
 
         throw new Exception('Could no resolve commit type of event: '.$event::class);
