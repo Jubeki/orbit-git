@@ -105,6 +105,12 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 Please see [CONTRIBUTING](./.github/CONTRIBUTING.md) for details.
 
+### TODO
+
+- [ ] Commit only changed file by event instead of complete path
+- [ ] Only push if wanted
+- [ ] Allow queuing of Git commits (possible risk of timing issued if multiple people update the same model at the same time)
+
 ## Credits
 
 - [Julius Kiekbusch](https://github.com/Jubeki)
